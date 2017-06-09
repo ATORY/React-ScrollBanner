@@ -2,10 +2,10 @@ import * as React from "react";
 import "./index.less";
 
 const imgs: string[] = [
-  "http://localhost/static/1.jpg",
-  "http://localhost/static/2.jpg",
-  "http://localhost/static/3.jpg",
-  "http://localhost/static/4.jpg"
+  "http://localhost:1234/static/1.jpg",
+  "http://localhost:1234/static/2.jpg",
+  "http://localhost:1234/static/3.jpg",
+  "http://localhost:1234/static/4.jpg"
 ];
 
 export class Banner extends React.Component<{}, {}> {
@@ -143,16 +143,10 @@ export class Banner extends React.Component<{}, {}> {
       let nextSrc: string = this.nextImgContainer.src;
       tempIndex = imgs.indexOf(nextSrc);
       this.showImg = nextSrc;
-      // let nextIndex: number = (nextImgIndex + 1) === imgs.length ? 0 : nextImgIndex + 1;
-      // this.nextImg = imgs[nextIndex];
-      // this.preImg = this.showImgContainer.src;
     } else {
       let preSrc: string = this.preImgContainer.src;
       tempIndex = imgs.indexOf(preSrc);
       this.showImg = preSrc;
-      // let preIndex: number = (preImgIndex - 1) === -1 ? imgs.length - 1 : preImgIndex - 1;
-      // this.preImg = imgs[preIndex];
-      // this.nextImg = this.showImgContainer.src;
     }
 
     if (index || index === 0) {
@@ -165,20 +159,6 @@ export class Banner extends React.Component<{}, {}> {
         this.preImg = imgs[index];
         this.preImgContainer.src = this.preImg;
       }
-      // this.scrollBanner.style.left = toRight ? -window.innerWidth * 2 + "px" : "0px";
-      // setTimeout(() => {
-      //   this.showImg = temp;
-      //   this.preImgContainer.src = this.preImg;
-      //   this.nextImgContainer.src = this.nextImg;
-      //   this.showImgContainer.src = this.showImg;
-      //   this.scrollBanner.style.transition = "none";
-      //   this.scrollBanner.style.left = -window.innerWidth + "px";
-
-      //   const _index: number = imgs.indexOf(this.showImg);
-      //   this.setIndicate(_index);
-      //   cb && cb();
-      // }, 300);
-      // return;
     }
 
     this.scrollBanner.style.left = toRight ? -window.innerWidth * 2 + "px" : "0px";
@@ -197,8 +177,6 @@ export class Banner extends React.Component<{}, {}> {
       cb && cb();
     }, 300);
   }
-
-  // private res
 
   public render(): JSX.Element {
     return (
